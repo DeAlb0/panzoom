@@ -10,10 +10,14 @@ Developer's Guide
 -----------------
 
 - when using sphinx edit your conf.py
-  - add the following lines to the html_js_files = [ ... ] array (or add this array in case it does not exist)
+  - add the following line to the html_js_files = [ ... ] array (or add this array in case it does not exist)
+```
     'https://dealb0.github.io/panzoom/code/panzoom.v1.x.js',
-  - add the following lines to the html_css_files = [ ... ] array (or add this array in case it does not exist)
+```    
+  - add the following line to the html_css_files = [ ... ] array (or add this array in case it does not exist)
+```  
     'https://dealb0.github.io/panzoom/code/panzoom.v1.x.css',
+```    
   - of course you need to rebuild after adding these lines, but that's all you have to do
 
 User's Guide
@@ -35,5 +39,5 @@ The user of panzoom can do the following operations :
     - this sounds strange but feels more naturally like telling in which direction you would move your head
   - use the '+' and '-' key to enlarge or make it smaller = zoom in and out
   - press '*' or 'x' on the numeric keypad to return to default size and position
-  - press '/' to see the image in real size, even if that is too big for the window and requires panning to see everything
+  - press '/' or '&divide;' on the numeric keypad to see the image in real size, even if that is too big for the window and requires panning to see everything
   - use the enter key to leave full window mode
