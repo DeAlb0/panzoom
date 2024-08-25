@@ -9,7 +9,7 @@ It may work or be adaptable for other uses cases.
 Developer's Guide
 -----------------
 
-- when using sphinx edit your conf.py
+- if you are using sphinx the conf.py must be changed to include panzoom as follows:
   - add the following line to the html_js_files = [ ... ] array (or add this array in case it does not exist)
 ```
     'https://dealb0.github.io/panzoom/code/panzoom.v1.x.js',
