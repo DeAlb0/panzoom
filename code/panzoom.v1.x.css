@@ -1,0 +1,89 @@
+.zoomout {
+    height: 100% !important;
+    max-height : 100vh;
+    overflow:hidden;
+    inset: 0px;
+    z-index: 11000;
+    position: fixed;
+    background-color: white;
+    border: 15px solid rgba(200, 200, 200, 0.6);
+    margin: 0px;
+}
+
+
+figure:has(.plantuml.zoombuttons>object):before {
+    float: right;
+    width: 100%;
+    text-align: right;
+    background-color: lightgray;
+    padding-right: 8px;
+    line-height: 24px;
+    font-size: 20px;
+    content: ' \2610'; /* empty square */
+}
+
+figure.zoomout:has(.plantuml.zoombuttons>object):before {
+    content: '\00D7'; /* x */
+    font-size: x-large;
+}
+
+.plantuml object,.plantuml:not(.zoomout) svg {
+    max-width:100% !important;
+    height: unset !important;
+}
+
+.zoomoutParent:not(.zoomout) {
+    cursor: zoom-in;    
+}
+
+object:not(:has(svg)) {
+    pointer-events: none;
+}
+
+.zoomout object, .zoomout img, .zoomout svg {
+    /* height: 100% !important */
+    max-width:100% !important;
+    height: unset !important;
+    position: absolute;
+    inset-area: bottom;
+}
+
+.zoomout svg:focus {
+    outline: none;
+}
+
+svg:focus, object:focus {
+    outline-color: lightgrey;
+}
+
+img:focus-visible {
+    outline: none;
+}   
+
+.zoomout:not(:has(.panzoomed)) .note {
+    opacity: 0;
+    display: block;
+    transition: opacity 4s 1.2s;
+    height: fit-content;
+    padding: 0.5em 1em;
+    visibility: visible; 
+}
+
+.zoomoutParent .note:hover {
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.zoomoutParent .note {
+    background: bisque;
+    width: fit-content;
+    bottom: -5px;
+    overflow: visible;
+    left: 40%;
+    position: absolute;
+    transition: none;
+    opacity: 1;
+    height: 0;
+    visibility: hidden;
+    padding: 0;
+}
