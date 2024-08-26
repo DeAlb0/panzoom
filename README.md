@@ -14,18 +14,18 @@ Set up
 - if you are using sphinx change conf.py in your sources to get the panzoom functionality on all generated pages :
   - add the following line to the html_js_files = [ ... ] array (or add this array in case it does not exist)
     ```
-    'https://dealb0.github.io/panzoom/code/panzoom.v1.x.js',
+       'https://dealb0.github.io/panzoom/code/panzoom.v1.x.js',
     ```    
   - add the following line to the html_css_files = [ ... ] array (or add this array in case it does not exist)
     ```  
-    'https://dealb0.github.io/panzoom/code/panzoom.v1.x.css',
+       'https://dealb0.github.io/panzoom/code/panzoom.v1.x.css',
     ```    
   - of course you need to rebuild after adding these lines, but that's all you have to do
 
 User's Guide
 ------------
 
-The user of panzoom can do the following operations :
+The user of panzoom can do the following operations on suitable images (see below what suitable means) :
 
 - mouse operations
   - click on the image to enlarge into the full window (with a small border, configurable with CSS)
@@ -43,3 +43,22 @@ The user of panzoom can do the following operations :
   - press '*' or 'x' on the numeric keypad to return to default size and position
   - press '/' or '&divide;' on the numeric keypad to see the image in real size, even if that is too big for the window and requires panning to see everything
   - use the enter key to leave full window mode
+
+Where does it work
+------------------
+
+panzoom is programmed to work on images that :
+- have a minimum width of half of the parent width. The parent width is typically the width of the column
+  - this is to avoid the annoying option to zoom small icons
+  - please note that this depends on the width of the window. So smaller images may only be supported after making the window smaller 
+- are injected with these Sphinx directives:
+  - figure
+  - drawio-figure
+  - uml
+  - needuml
+- have the SVG or PNG format
+  - SVGs are embedded into the html to allow using click events for both, hyperlinks and panning
+
+As the panzoom does not interfere with the generation of the html code it has to find a way to work with the html code as it is.
+This requires to have a parent element that contains only this image, so that the parent element is enlarged to full window
+and the image is moved and zoomed inside the parent element.
