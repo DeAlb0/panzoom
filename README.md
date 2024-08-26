@@ -33,7 +33,7 @@ The user of panzoom can do the following operations on suitable images (see belo
   - use drag = click, hold and move with the 1st (usually left) mouse button to move around the image
   - click in the full window image to leave full window mode
 - keyboard operation
-  - press 'enter' on the image with focus to enter full window mode
+  - press 'Enter' on the image with focus to enter full window mode
     - please note that it is unfortunately not so easy to gain keyboard focus for an image, you have to press Tab a lot of times
     - if possible, you probably easier start here with the mouse and use the keyboard after that
   - use the arrow keys left, right, up, down to move the image as if you where changing your view direction
@@ -42,7 +42,7 @@ The user of panzoom can do the following operations on suitable images (see belo
   - use the '+' and '-' key to enlarge or make it smaller = zoom in and out
   - press '*' or 'x' on the numeric keypad to return to default size and position
   - press '/' or '&divide;' on the numeric keypad to see the image in real size, even if that is too big for the window and requires panning to see everything
-  - use the enter key to leave full window mode
+  - use the Enter or Esc key to leave full window mode
 
 Where does it work
 ------------------
@@ -59,6 +59,11 @@ panzoom is programmed to work on images that :
 - have the SVG or PNG format
   - SVGs are embedded into the html to allow using click events for both, hyperlinks and panning
 
-As the panzoom does not interfere with the generation of the html code it has to find a way to work with the html code as it is.
-This requires to have a parent element that contains only this image, so that the parent element is enlarged to full window
-and the image is moved and zoomed inside the parent element.
+Images embedded with the "image" directive are not supported.
+
+How does it work ?
+------------------
+As panzoom does not interfere with the generation of the html code it has to find a way to work with the html code as it is.
+It uses parent elements that contain only the image, so that the parent element is enlarged to full window
+and the image is moved and zoomed inside the parent element. As the image directive inserts an img element without a
+dedicated parent it is not supported.
