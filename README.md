@@ -8,18 +8,18 @@ with .png and .svg files included through the figure or plantuml directive.
 
 It may work or be adaptable for other uses cases.
 
-Developer's Guide
------------------
+Set up
+------
 
 - if you are using sphinx the conf.py must be changed to include panzoom as follows:
   - add the following line to the html_js_files = [ ... ] array (or add this array in case it does not exist)
-```
+    ```
     'https://dealb0.github.io/panzoom/code/panzoom.v1.x.js',
-```    
+    ```    
   - add the following line to the html_css_files = [ ... ] array (or add this array in case it does not exist)
-```  
+    ```  
     'https://dealb0.github.io/panzoom/code/panzoom.v1.x.css',
-```    
+    ```    
   - of course you need to rebuild after adding these lines, but that's all you have to do
 
 User's Guide
